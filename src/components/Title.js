@@ -2,5 +2,5 @@ import React from 'react';
 
 
 export const Title = ({ children }) => (
-    <hi className="title">{children}</hi>
+    <h1 className="title">{children}</h1>
 )
