@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import ButtonBackToHome from '../components/ButtonBackToHome'
+
 const API_KEY = 'e0f59ddc'
 
 export class Detail extends Component {
@@ -27,10 +29,6 @@ export class Detail extends Component {
         })
     }
 
-    _goBack() {
-        window.history.back()
-    }
-
     componentDidMount() {
         // Basic Router + disengage Home
         //const { id } = this.props
@@ -43,7 +41,6 @@ export class Detail extends Component {
         const { Title, Type, Released, Actors, Director, Genre, Plot, Poster, Writer, imdbRating } = this.state.movie
         return (
             <div className="has-text-centered">
-                <button onClick={this._goBack}>Home</button>
                 <h1>{Title}</h1>
                 <h2>{Director}</h2>
                 <img src={Poster} alt={Title} />
@@ -54,7 +51,7 @@ export class Detail extends Component {
                 <p>Writer: {Writer}</p>
                 <small>{Plot}</small>
                 <p>Rating Imbd: {imdbRating}</p>
-
+                <ButtonBackToHome />
             </div>
         );
     }
