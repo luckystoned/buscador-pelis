@@ -19,7 +19,7 @@ export class SearchForm extends Component {
         `)
         .then(res => res.json())
         .then(results => {
-            const { Search, TotalResults } = results
+            const { Search = [], TotalResults= "0" } = results
             console.log(Search, TotalResults)
             this.props.onResults(Search)
         })
