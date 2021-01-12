@@ -5,7 +5,14 @@ const API_KEY = 'e0f59ddc'
 
 export class Detail extends Component {
     static propTypes = {
-        id: PropTypes.string
+        // Basic Router + disengage Home
+        //id: PropTypes.string
+        match: PropTypes.shape({
+            params: PropTypes.object,
+            isExact: PropTypes.bool,
+            path: PropTypes.string,
+            url: PropTypes.string
+        })
     }
     
     state = { movie: {} }
@@ -25,8 +32,11 @@ export class Detail extends Component {
     }
 
     componentDidMount() {
-        const { id } = this.props
-        this._fetchMovie({ id })
+        // Basic Router + disengage Home
+        //const { id } = this.props
+        //this._fetchMovie({ id })
+        const { movieId } = this.props.match.params
+        this._fetchMovie({ id: movieId })
     }
 
     render() {
@@ -34,7 +44,7 @@ export class Detail extends Component {
         return (
             <div className="has-text-centered">
                 <button onClick={this._goBack}>Home</button>
-                <h1 className>{Title}</h1>
+                <h1>{Title}</h1>
                 <h2>{Director}</h2>
                 <img src={Poster} alt={Title} />
                 <h3>Type: {Type}</h3>
