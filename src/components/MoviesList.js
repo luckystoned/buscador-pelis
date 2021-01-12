@@ -17,7 +17,8 @@ export class MoviesList extends Component {
                     movies.map(movie => {
                         return(
                             <div key={movie.imdbID} className="MoviesList-item">
-                                <Movie 
+                                <Movie
+                                    id={movie.imdbID} 
                                     title={movie.Title}
                                     type={movie.Type}
                                     year={movie.Year}
