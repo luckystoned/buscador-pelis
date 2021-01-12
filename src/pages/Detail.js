@@ -32,9 +32,9 @@ export class Detail extends Component {
     render() {
         const { Title, Type, Released, Actors, Director, Genre, Plot, Poster, Writer, imdbRating } = this.state.movie
         return (
-            <div>
+            <div className="has-text-centered">
                 <button onClick={this._goBack}>Home</button>
-                <h1>{Title}</h1>
+                <h1 className>{Title}</h1>
                 <h2>{Director}</h2>
                 <img src={Poster} alt={Title} />
                 <h3>Type: {Type}</h3>
